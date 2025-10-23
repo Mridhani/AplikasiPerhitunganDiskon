@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -291,15 +294,20 @@ public class DiskonForm extends javax.swing.JFrame {
 
     private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
         // TODO add your handling code here:
-        int confirm = javax.swing.JOptionPane.showConfirmDialog(
-            this,
-            "Apakah Anda yakin ingin keluar?",
-            "Konfirmasi Keluar",
-            javax.swing.JOptionPane.YES_NO_OPTION
-        );
-        if (confirm == javax.swing.JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+          int pilihan = JOptionPane.showConfirmDialog(
+        this,
+        "Apakah Anda yakin ingin keluar dari aplikasi?",
+        "Konfirmasi Keluar",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.QUESTION_MESSAGE
+    );
+
+    if (pilihan == JOptionPane.YES_OPTION) {
+        JOptionPane.showMessageDialog(this, "Terima kasih telah menggunakan aplikasi ini!");
+        System.exit(0); // keluar jika pengguna memilih "Ya"
+    } else {
+        // jika memilih "Tidak", tidak melakukan apa-apa
+    }
     }//GEN-LAST:event_btnKeluarActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
